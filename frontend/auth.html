@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS TaskAudit - Login Corporativo</title>
+    <link rel="icon" type="image/png" href="https://help.apple.com/assets/68DC426DED36202599014CA7/68DC426FED36202599014CB3/pt_BR/9440616a1ad2b8f57bd2e80bcd2c5f96.png">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <!-- API de Identidade do Google -->
+    <script src="https://google.com" async defer></script>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h2>SaaS TaskAudit</h2>
+                <p>Gerenciamento Técnico de Sprint & Auditoria</p>
+            </div>
+            <!-- Contêiner do botão do Google -->
+            <div class="google-btn-wrapper">
+                <div id="g_id_onload"
+                     data-client_id="://googleusercontent.com"
+                     data-context="signin"
+                     data-ux_mode="popup"
+                     data-callback="handleCredentialResponse"
+                     data-auto_prompt="false">
+                </div>
+
+                <div class="g_id_signin"
+                     data-type="standard"
+                     data-shape="rectangular"
+                     data-theme="outline"
+                     data-text="signin_with"
+                     data-size="large"
+                     data-logo_alignment="left">
+                </div>
+            </div>
+
+            <!-- BOTÃO DE CORREÇÃO EM LINHA (PULA VALIDAÇÕES TRAVADAS) -->
+            <button onclick="window.handleCredentialResponse({ credential: 'token_mock_teste_local' })" 
+                    style="margin-top: 15px; padding: 12px; background-color: #4f46e5; color: #ffffff; border: none; border-radius: 10px; cursor: pointer; font-weight: 600; width: 100%; font-family: inherit; font-size: 0.9rem;">
+                Acesso Técnico de Teste (Bypass)
+            </button>
+            <div class="auth-footer" style="margin-top: 24px;">
+                <p>Acesso restrito a técnicos e engenheiros autorizados.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carregamento das classes em POO do front -->
+    <script src="src/services/ApiService.js"></script>
+    <script src="src/controllers/AuthController.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas SaaS & Auditoria</title>
+    <link rel="icon" type="image/png" href="https://help.apple.com/assets/68DC426DED36202599014CA7/68DC426FED36202599014CB3/pt_BR/9440616a1ad2b8f57bd2e80bcd2c5f96.png">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="app-viewport-wrapper">
+        <div class="container">
+            <!-- HEADER DE PROGRESSO -->
+            <div class="header-progresso">
+                <div class="operator-badge-container">Painel de Sprint</div>
+                <h1>Lista de Tarefas</h1>
+                <div class="contador-container">
+    Operador: <span id="nome-tecnico-logado">Tech Lead SaaS</span> 
+    <a href="#" id="btn-sair" class="btn-logout-clean" title="Encerrar Sessão">
+        <svg viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+        SAIR
+    </a>
+</div>
+
+                <div class="contador-container" id="texto-contador">0 de 0 concluídas</div>
+                <div class="track-barra-progresso">
+                    <div id="fill-barra-progresso"></div>
+                </div>
+            </div>
+
+            <!-- FORMULÁRIO DE CADASTRO -->
+            <form id="form-tarefa">
+                <div class="container-input-validacao">
+                    <input type="text" id="input-tarefa" placeholder="Digite uma nova tarefa técnica..." autocomplete="off" />
+                </div>
+                <select id="nova-tarefa-prioridade" class="select-prioridade-form">
+                    <option value="Media">Média</option>
+                    <option value="Alta">Alta</option>
+                    <option value="Baixa">Baixa</option>
+                </select>
+                <button type="submit">Salvar</button>
+            </form>
+            <!-- CONTROLES DE BUSCA, EXIBIÇÃO E FILTRO DE PRIORIDADE -->
+            <div class="controles-SaaS-sprint">
+                <div class="container-busca-sprint">
+                    <input type="text" id="input-busca" placeholder="🔍 Buscar no banco...">
+                </div>
+                
+                <div class="container-limite-exibicao">
+                    <label for="select-limite">Exibir:</label>
+                    <select id="select-limite">
+                        <option value="5" selected>5</option>
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                    </select>
+                </div>
+
+                <div class="container-limite-exibicao">
+                    <select id="filtrar-prioridade" class="select-prioridade-form">
+                        <option value="">Todas</option>
+                        <option value="Alta">Alta</option>
+                        <option value="Media">Média</option>
+                        <option value="Baixa">Baixa</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- ABAS DE FILTRO POR STATUS -->
+            <div class="abas-filtro-container">
+                <button class="aba-btn ativa" data-status="todas">Todas</button>
+                <button class="aba-btn" data-status="pendentes">Pendentes</button>
+                <button class="aba-btn" data-status="concluidas">Concluídas</button>
+            </div>
+
+            <!-- LISTAGEM DOS CARDS -->
+            <ul id="lista-tarefas"></ul>
+
+            <!-- PAGINAÇÃO -->
+            <div class="paginacao-container">
+                <button id="btn-pag-anterior">Anterior</button>
+                <div id="numeros-paginas-container" class="numeros-paginas-wrapper"></div>
+                <button id="btn-pag-proxima">Próxima</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CARREGAMENTO DOS SCRIPTS -->
+    <script src="src/utils/Formatter.js"></script>
+    <script src="src/services/ApiService.js"></script>
+    <script src="src/controllers/DashController.js"></script>
+</body>
+</html>

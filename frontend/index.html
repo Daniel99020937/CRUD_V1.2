@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Task Manager - Produtividade Corporativa</title>
+<link rel="icon" type="image/png" href="https://help.apple.com/assets/68DC426DED36202599014CA7/68DC426FED36202599014CB3/pt_BR/9440616a1ad2b8f57bd2e80bcd2c5f96.png">
+    <style>
+        /* Estilos embutidos específicos da Landing Page institucional */
+        .hero-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .hero-section h2 {
+            font-size: 1.8rem;
+            color: #0f172a;
+            margin-bottom: 12px;
+            letter-spacing: -0.025em;
+        }
+        .hero-section p {
+            font-size: 1rem;
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+        .features-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+        .feature-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 16px;
+            border-radius: 12px;
+            text-align: left;
+        }
+        .feature-card h3 {
+            font-size: 1.1rem;
+            color: #334155;
+            margin-bottom: 6px;
+        }
+        .feature-card p {
+            font-size: 0.85rem;
+            color: #64748b;
+            line-height: 1.4;
+        }
+        .btn-cta-acesso {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #4f46e5;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+            transition: all 0.2s ease;
+            margin-top: 10px;
+        }
+        .btn-cta-acesso:hover {
+            background-color: #4338ca;
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+    <div class="app-viewport-wrapper">
+        <div class="container" style="text-align: center;">
+            
+            <!-- Seção de Destaque Inicial (Hero) -->
+            <div class="hero-section">
+                <h2>SaaS Task Manager</h2>
+                <p>Conheça a plataforma SaaS de controle de sprints homologada com auditoria cronológica militar e isolamento de escopo por token assinado.</p>
+                
+                <!-- PONTE DE NAVEGAÇÃO: Direciona para o card de login corporativo -->
+                <a href="auth.html" class="btn-cta-acesso">Entrar na Plataforma →</a>
+            </div>
+
+            <!-- Grade de Funcionalidades Técnicas -->
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🔒 Criptografia Multi-Tenant</h3>
+                    <p>Isolamento estrito de registros no MySQL via tokens JWT. Dados comerciais protegidos contra vazamento.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚡ Ordenação Estratégica</h3>
+                    <p>Algoritmo inteligente baseado em criticidade que prioriza tarefas automaticamente no topo do painel.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 BI e Relatórios</h3>
+                    <p>Geração instantânea e assíncrona de relatórios de auditoria prontos para leitura no Microsoft Excel.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Linha 91: Script de controle de fluxo automatizado -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const token = localStorage.getItem('saas_user_token');
+            // Se o operador já possuir uma sessão ativa gravada, pula a introdução e abre o painel direto
+            if (token) {
+                window.location.href = 'dashboard.html';
+            }
+        });
+    </script>
+</body>
+</html>
